@@ -1,7 +1,8 @@
-package com.mobilemonkeysoftware.dagger2test.di
+package com.mobilemonkeysoftware.dagger2test.di.activity
 
 import android.app.Activity
-import com.mobilemonkeysoftware.dagger2test.MainActivity
+import com.mobilemonkeysoftware.dagger2test.ui.activity.main.MainActivity
+import com.mobilemonkeysoftware.dagger2test.ui.activity.main.MainActivityComponent
 import dagger.Binds
 import dagger.Module
 import dagger.android.ActivityKey

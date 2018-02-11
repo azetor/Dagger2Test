@@ -1,6 +1,8 @@
 package com.mobilemonkeysoftware.dagger2test.di
 
 import com.mobilemonkeysoftware.dagger2test.MainApp
+import com.mobilemonkeysoftware.dagger2test.di.activity.ActivityBinder
+import com.mobilemonkeysoftware.dagger2test.di.fragment.FragmentBinder
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
@@ -12,6 +14,7 @@ import javax.inject.Singleton
 @Component(modules = arrayOf(
         AndroidSupportInjectionModule::class, // TODO: Step 1a add android dagger injection module, for proper injection, this is required!!!
         ActivityBinder::class, // TODO: Step 1b add activity binder
+        FragmentBinder::class,
         ApplicationModule::class // TODO: Step 3b add application module
 ))
 @Singleton // TODO: singleton annotation is optional

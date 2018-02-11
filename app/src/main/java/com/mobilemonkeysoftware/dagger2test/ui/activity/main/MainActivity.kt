@@ -1,10 +1,13 @@
-package com.mobilemonkeysoftware.dagger2test
+package com.mobilemonkeysoftware.dagger2test.ui.activity.main
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.mobilemonkeysoftware.dagger2test.R
+import com.mobilemonkeysoftware.dagger2test.StringHelper1
+import com.mobilemonkeysoftware.dagger2test.StringHelper2
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -18,6 +21,16 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var stringHelper2: StringHelper2
+
+    /**
+     * TODO: wrong scope example
+     * not working, wrong scope!!!
+     * Error:com.mobilemonkeysoftware.dagger2test.ui.activity.main.MainActivityComponent (unscoped) may not reference scoped bindings:
+     * Error:Execution failed for task ':app:compileDebugJavaWithJavac'.
+     * > Compilation failed; see the compiler error output for details.
+     */
+//    @Inject
+//    lateinit var stringHelperFragment: StringHelperFragment
 
     @field:[Inject Named("string2")]
 //    @Inject // TODO XXX nie tak named
@@ -38,7 +51,7 @@ class MainActivity : AppCompatActivity() {
                     .setAction("Action", null).show()
         }
 
-        text.text = stringHelper2.string() + string2
+        text.text = stringHelper2.string() + string2 //+ stringHelperFragment.string() // TODO: wrong scope example
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

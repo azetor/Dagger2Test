@@ -1,6 +1,5 @@
-package com.mobilemonkeysoftware.dagger2test.di
+package com.mobilemonkeysoftware.dagger2test.ui.activity.main
 
-import com.mobilemonkeysoftware.dagger2test.MainActivity
 import dagger.Module
 import dagger.Subcomponent
 import dagger.android.AndroidInjector
