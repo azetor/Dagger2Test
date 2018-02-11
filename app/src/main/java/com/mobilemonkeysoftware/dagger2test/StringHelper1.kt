@@ -7,8 +7,8 @@ import javax.inject.Singleton
  * Created by AR on 06/02/2018.
  */
 @Singleton
-class KoksDoStringów @Inject constructor() {
+class StringHelper1 @Inject constructor() {
 
-    fun test(): String = "koks1"
+    fun string(): String = "STRING_HELPER_1"
 
 }

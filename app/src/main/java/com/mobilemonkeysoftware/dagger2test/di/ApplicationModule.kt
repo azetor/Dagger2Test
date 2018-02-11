@@ -21,12 +21,12 @@ class ApplicationModule {
 
     @Singleton
     @Provides
-    @Named("koksu3")
-    fun provideKoksStringv3() = "KOKS3"
+    @Named("string1")
+    fun provideString1() = "STRING_1"
 
     @Singleton
     @Provides
-    @Named("koksu4")
-    fun provideKoksStringv4() = "KOKS4"
+    @Named("string2")
+    fun provideString2() = "STRING_2"
 
 }

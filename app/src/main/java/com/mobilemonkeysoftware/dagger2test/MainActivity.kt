@@ -5,25 +5,24 @@ import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import dagger.android.AndroidInjection
-
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 import javax.inject.Inject
 import javax.inject.Named
 
 class MainActivity : AppCompatActivity() {
 
     @Inject
-    lateinit var koksDoStringów: KoksDoStringów
+    lateinit var stringHelper1: StringHelper1
 
     @Inject
-    lateinit var koksv2: Koksv2
+    lateinit var stringHelper2: StringHelper2
 
-    @field:[Inject Named("koksu4")]
+    @field:[Inject Named("string2")]
 //    @Inject // TODO XXX nie tak named
-//    @Named("koksu4")
-    lateinit var cos: String
+//    @Named("string2")
+    lateinit var string2: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                     .setAction("Action", null).show()
         }
 
-        Toast.makeText(this, koksv2.testZkoksa2() + cos, Toast.LENGTH_LONG).show()
+        text.text = stringHelper2.string() + string2
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
