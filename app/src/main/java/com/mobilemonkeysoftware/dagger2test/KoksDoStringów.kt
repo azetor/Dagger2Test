@@ -10,4 +10,5 @@ import javax.inject.Singleton
 class KoksDoStringów @Inject constructor() {
 
     fun test(): String = "koks1"
+
 }

@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // TODO
+        // TODO: Step 4a inject/register activity in dagger
         AndroidInjection.inject(this)
 
         setContentView(R.layout.activity_main)
@@ -57,4 +57,5 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
 }

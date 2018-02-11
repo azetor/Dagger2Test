@@ -17,4 +17,5 @@ class Koksv2 @Inject constructor(
 //    internal lateinit var koksDoStringów: KoksDoStringów
 
     fun testZkoksa2(): String = "koks2" + koksDoStringów.test() + cos
+
 }
