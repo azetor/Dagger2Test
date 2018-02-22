@@ -9,6 +9,7 @@ import dagger.android.AndroidInjector
  */
 // TODO: Step 4 create activity component for injecting activity, required!!!
 @Subcomponent(modules = arrayOf(MainActivityComponent.MainActivityModule::class))
+@MainActivityScope
 interface MainActivityComponent : AndroidInjector<MainActivity> {
 
     // TODO: body of this component should by the same always!!

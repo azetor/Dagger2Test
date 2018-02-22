@@ -1,13 +1,13 @@
 package com.mobilemonkeysoftware.dagger2test.ui.activity.main
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import com.mobilemonkeysoftware.dagger2test.R
 import com.mobilemonkeysoftware.dagger2test.StringHelper1
 import com.mobilemonkeysoftware.dagger2test.StringHelper2
+import com.mobilemonkeysoftware.dagger2test.StringHelper3
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -21,6 +21,12 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var stringHelper2: StringHelper2
+
+    @Inject
+    lateinit var stringHelper3: StringHelper3
+
+    @Inject
+    lateinit var stringHelperActivity: StringHelperActivity
 
     /**
      * TODO: wrong scope example
@@ -46,12 +52,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
-
-        text.text = stringHelper2.string() + string2 //+ stringHelperFragment.string() // TODO: wrong scope example
+        text.text = stringHelper2.string() + "\n" + string2 + "\n" + stringHelperActivity.string() + "\n" + stringHelper3.string() //+ stringHelperFragment.string() // TODO: wrong scope example
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

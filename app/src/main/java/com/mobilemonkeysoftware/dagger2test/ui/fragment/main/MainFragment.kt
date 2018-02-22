@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.mobilemonkeysoftware.dagger2test.R
+import com.mobilemonkeysoftware.dagger2test.StringHelper3
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.fragment_main.*
 import javax.inject.Inject
@@ -16,11 +17,18 @@ import javax.inject.Inject
 class MainFragment : Fragment() {
 
     @Inject
+    lateinit var stringHelper3: StringHelper3
+
+    @Inject
     lateinit var stringHelperFragment: StringHelperFragment
 
     // TODO: working scope example
 //    @Inject
 //    lateinit var stringHelper1: StringHelper1
+
+    // TODO: working scope example
+//    @Inject
+//    lateinit var stringHelperActivity: StringHelperActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -35,7 +43,7 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        text.text = stringHelperFragment.string() // + stringHelper1.string() // TODO: working scope example
+        text.text = stringHelperFragment.string() + "\n" + stringHelper3.string()  // + stringHelper1.string() // TODO: working scope example
     }
 
 }
