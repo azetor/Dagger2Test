@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Dagger2Test</string>
     <string name="action_settings">Settings</string>
+    <string name="todo">TODO:\n1. Change method string in all helpers. Add hashCode eg.\nfun string(): String = \"STRING_HELPER_1: \" + hashCode().toString() .\n2. Add all allowed injections to fragment and activity.\n3. Then show all results i text view.</string>
 </resources>
