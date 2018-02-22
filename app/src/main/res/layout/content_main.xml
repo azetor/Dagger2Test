@@ -36,4 +36,16 @@
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/text" />
 
+    <TextView
+        android:id="@+id/todo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TODO:\n1. Change method string in all helpers to return hashCode.\n2. Add all allowed injections to fragment and activity.\n3. Then show all results i text view."
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/mainFragment"
+        app:layout_constraintTop_toBottomOf="@+id/mainFragment" />
+
 </android.support.constraint.ConstraintLayout>

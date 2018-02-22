@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Toast
+import com.jakewharton.rxbinding2.view.clicks
 import com.mobilemonkeysoftware.dagger2test.R
 import com.mobilemonkeysoftware.dagger2test.StringHelper1
 import com.mobilemonkeysoftware.dagger2test.StringHelper2
@@ -53,6 +56,13 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         text.text = stringHelper2.string() + "\n" + string2 + "\n" + stringHelperActivity.string() + "\n" + stringHelper3.string() //+ stringHelperFragment.string() // TODO: wrong scope example
+
+        // TODO time to check current instances of injected fields. Change method string() to return hash code of class
+        fab
+                .clicks()
+                .buffer(10)
+                .doOnNext { Toast.makeText(applicationContext, "TODO :)", Toast.LENGTH_LONG).show() }
+                .subscribe { todo.visibility = View.VISIBLE }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
