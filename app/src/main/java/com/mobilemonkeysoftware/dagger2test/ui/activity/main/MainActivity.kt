@@ -57,9 +57,17 @@ class MainActivity : AppCompatActivity() {
 
         text.text = stringHelper2.string() + "\n" + string2 + "\n" + stringHelperActivity.string() + "\n" + stringHelper3.string() //+ stringHelperFragment.string() // TODO: wrong scope example
 
+        var currentImageRes = R.drawable.ic_android_white_24dp
         // TODO time to check current instances of injected fields. Change method string() to return hash code of class
         fab
                 .clicks()
+                .doOnNext {
+                    currentImageRes = when (currentImageRes) {
+                        R.drawable.ic_android_white_24dp -> R.drawable.ic_android_black_24dp
+                        else -> R.drawable.ic_android_white_24dp
+                    }
+                    fab.setImageResource(currentImageRes)
+                }
                 .buffer(10)
                 .doOnNext { Toast.makeText(applicationContext, "TODO :)", Toast.LENGTH_LONG).show() }
                 .subscribe { todo.visibility = View.VISIBLE }
