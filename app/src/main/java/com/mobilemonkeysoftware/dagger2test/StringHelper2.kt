@@ -16,6 +16,6 @@ class StringHelper2 @Inject constructor(
 //    @Inject
 //    internal lateinit var stringHelper1: StringHelper1
 
-    fun string(): String = "STRING_HELPER_2" + stringHelper1.string() + string1
+    fun string(): String = "STRING_HELPER_2: " + hashCode().toString()
 
 }

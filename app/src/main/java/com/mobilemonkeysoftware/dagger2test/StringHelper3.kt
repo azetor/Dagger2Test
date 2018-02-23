@@ -7,6 +7,6 @@ import javax.inject.Inject
  */
 class StringHelper3 @Inject constructor() {
 
-    fun string(): String = "STRING_HELPER_3"
+    fun string(): String = "STRING_HELPER_3: " + hashCode().toString()
 
 }

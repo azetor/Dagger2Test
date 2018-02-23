@@ -8,6 +8,6 @@ import javax.inject.Inject
 @MainFragmentScope
 class StringHelperFragment @Inject constructor() {
 
-    fun string(): String = "STRING_HELPER_FRAGMENT_1"
+    fun string(): String = "STRING_HELPER_FRAGMENT_1: " + hashCode().toString()
 
 }

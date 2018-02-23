@@ -55,10 +55,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        text.text = stringHelper2.string() + "\n" + string2 + "\n" + stringHelperActivity.string() + "\n" + stringHelper3.string() //+ stringHelperFragment.string() // TODO: wrong scope example
+//        text.text = stringHelper2.string() + "\n" + string2 + "\n" + stringHelperActivity.string() + "\n" + stringHelper3.string() //+ stringHelperFragment.string() // TODO: wrong scope example
 
         var currentImageRes = R.drawable.ic_android_white_24dp
-        // TODO time to check current instances of injected fields. Change method string() to return hash code of class
+        // TODO TASK: time to check current instances of injected fields. Change method string() to return hash code of class
+        text.text = stringHelper1.string() + "\n" + stringHelper2.string() + "\n" + stringHelper3.string() + "\n" + stringHelperActivity.string() //+ stringHelperFragment.string() // TODO: wrong scope example
         fab
                 .clicks()
                 .doOnNext {

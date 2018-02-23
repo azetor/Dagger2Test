@@ -8,6 +8,6 @@ import javax.inject.Inject
 @MainActivityScope
 class StringHelperActivity @Inject constructor() {
 
-    fun string(): String = "STRING_HELPER_ACTIVITY_1"
+    fun string(): String = "STRING_HELPER_ACTIVITY_1: " + hashCode().toString()
 
 }

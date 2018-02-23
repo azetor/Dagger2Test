@@ -9,6 +9,6 @@ import javax.inject.Singleton
 @Singleton
 class StringHelper1 @Inject constructor() {
 
-    fun string(): String = "STRING_HELPER_1"
+    fun string(): String = "STRING_HELPER_1: " + hashCode().toString()
 
 }
